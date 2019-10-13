@@ -15,7 +15,6 @@ namespace MasteryBlog.Tests
             var result = underTest.Index();
 
             Assert.IsType<ViewResult>(result);
-
         }
     }
 }

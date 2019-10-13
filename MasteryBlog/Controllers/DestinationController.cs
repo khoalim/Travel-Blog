@@ -22,5 +22,11 @@ namespace MasteryBlog.Controllers
             var model = destinationRepo.GetAll();
             return View(model);
         }
+
+        public ViewResult Details(int id)
+        {
+            var model = destinationRepo.GetByID(id);
+            return View(model);
+        }
     }
 }

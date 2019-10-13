@@ -14,10 +14,10 @@ namespace MasteryBlog.Respositories
         {
             destinationsList = new List<Destination>()
             {
-                new Destination(1, "Image", "Family Getaway", "Great for family fun"),
-                new Destination(2, "Image", "Business Trip", "Work hard, Play hard"),
-                new Destination(3, "Image", "Retirement", "Top of the bucket-list"),
-                new Destination(4, "Image", "Honeymoon", "Paradise")
+                new Destination(1, "/Images/FamilyVacation.jpg", "Family Getaway", "Great for family fun"),
+                new Destination(2, "/Images/BusinessTrip.jpg", "Business Trip", "Work hard, Play hard"),
+                new Destination(3, "/Images/Retirement.jpg", "Retirement", "Top of the bucket-list"),
+                new Destination(4, "/Images/Honeymoon.jpg", "Honeymoon", "Paradise")
             };
         }
 
