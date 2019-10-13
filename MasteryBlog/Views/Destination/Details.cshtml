@@ -1,0 +1,26 @@
+﻿@model MasteryBlog.Models.Destination.Destination
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@Model.Name Page</title>
+</head>
+<body>
+    <h1>Destination Details fro @Model.Name</h1>
+    <div>
+        <p><span>@Model.Name</span></p>
+        <p>Description: <span>@Model.Description</span></p>
+        <hr/>
+    </div>
+
+    <a href="/Home/Index">Go Back</a>
+    <footer><h6>&copy; Destination Blog 2019</h6></footer>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿@model IEnumerable<MasteryBlog.Models.Destination.Destination>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Destinations</title>
+</head>
+<body>
+    <h1>List of Destinations</h1>
+    @foreach (var destination in Model)
+    {
+        <article>
+            <p><a href="/Destination/Details/@destination.Id">@destination.Name</a></p>
+        </article>
+    }
+
+    <a href="/Home/Index">Go Back</a>
+
+</body>
+</html>

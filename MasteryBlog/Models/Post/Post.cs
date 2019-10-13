@@ -11,7 +11,7 @@ namespace MasteryBlog.Models.Post
         public string Title { get; set; }
         public string Body { get; set; }
         public string Author { get; set; }
-        public int PublishDate { get; set; }
+        public DateTime PublishDate { get; set; }
         public string Category { get; set; }
         public string Tags { get; set; }
 
@@ -20,7 +20,7 @@ namespace MasteryBlog.Models.Post
 
         }
 
-        public Post(int id, string title, string body, string author, int publishDate, string category, string tags)
+        public Post(int id, string title, string body, string author, DateTime publishDate, string category, string tags)
         {
             this.ID = id;
             this.Title = title;
