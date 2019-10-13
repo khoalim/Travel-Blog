@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MasteryBlog.Models.Destination;
-using MasteryBlog.Respositories;
+using MasteryBlog.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MasteryBlog.Controllers

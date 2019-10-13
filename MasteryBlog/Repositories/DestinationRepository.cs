@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MasteryBlog.Respositories
+namespace MasteryBlog.Repositories
 {
     public class DestinationRepository : IRepository<Destination>
     {

@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MasteryBlog.Data;
 using MasteryBlog.Models.Destination;
-using MasteryBlog.Respositories;
+using MasteryBlog.Models.Post;
+using MasteryBlog.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -19,6 +21,8 @@ namespace MasteryBlog
         {
             services.AddMvc();
             services.AddScoped<IRepository<Destination>, DestinationRepository>();
+            services.AddScoped<IRepository<Post>, PostRepository>();
+            services.AddDbContext<BlogContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
