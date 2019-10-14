@@ -1,4 +1,5 @@
-﻿using MasteryBlog.Models.Destination;
+﻿using MasteryBlog.Data;
+using MasteryBlog.Models.Destination;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,14 @@ namespace MasteryBlog.Repositories
 {
     public class DestinationRepository : IRepository<Destination>
     {
+        private BlogContext db;
+
+        public DestinationRepository(BlogContext db)
+        {
+            this.db = db;
+        }
+
+
 
         public List<Destination> destinationsList;
         public DestinationRepository()
