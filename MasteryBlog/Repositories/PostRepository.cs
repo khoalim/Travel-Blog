@@ -16,19 +16,52 @@ namespace MasteryBlog.Repositories
             this.db = db;
         }
         
+        public int Count()
+        {
+            return db.Posts.Count();
+        }
+
+        public void Create(Post post)
+        {
+            db.Posts.Add(post);
+            db.SaveChanges();
+        }
+
+        public Post GetByID(int id)
+        {
+            return db.Posts.Single(p => p.ID == id);
+        }
+
+        public void Delete(Post post)
+        {
+            db.Posts.Remove(post);
+            db.SaveChanges();
+        }
         public IEnumerable<Post> GetAll()
         {
-            return db.Posts;
+            return db.Posts.ToList();
         }
+
+        public void Save()
+        {
+            db.SaveChanges();
+        }
+
+        //public IEnumerable<Post> GetAll()
+        //{
+        //    return db.Posts;
+        //}
 
         //public IEnumerable<Post> GetByProductID(int postID)
         //{
         //    var posts = db.Posts.Where()
         //}
 
-        public Post GetByID(int id)
-        {
-            return db.Posts.Single(p => p.ID == id);
-        }
+        //public Post GetByID(int id)
+        //{
+        //    return db.Posts.Single(p => p.ID == id);
+        //}
+
+
     }
 }

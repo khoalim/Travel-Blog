@@ -15,6 +15,9 @@ namespace MasteryBlog.Models.Post
         public string Category { get; set; }
         public string Tags { get; set; }
 
+        //public virtual int DestinationID { get; set; }
+        //public virtual Destination Destination { get; set; }
+
         public Post()
         {
 

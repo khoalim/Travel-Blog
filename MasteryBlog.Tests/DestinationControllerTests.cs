@@ -12,6 +12,11 @@ namespace MasteryBlog.Tests
     {
         IRepository<Destination> destinationRepo;
 
+        public DestinationControllerTests()
+        {
+            destinationRepo = new DestinationRepository();
+        }
+
         [Fact]
         public void Index_Returns_A_View()
         {
