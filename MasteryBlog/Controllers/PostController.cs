@@ -10,17 +10,23 @@ namespace MasteryBlog.Controllers
 {
     public class PostController : Controller
     {
-        //IRepository<Post> postRepo;
+        IRepository<Post> postRepo;
 
-        //public PostController (IRepository<Post> postRepo)
-        //{
-        //    this.postRepo = postRepo;
-        //}
+        public PostController(IRepository<Post> postRepo)
+        {
+            this.postRepo = postRepo;
+        }
 
-        //public ViewResult Index()
-        //{
-        //    var model = postRepo.GetAll();
-        //    return View(model);
-        //}
+        public ViewResult Index()
+        {
+            var model = postRepo.GetAll();
+            return View(model);
+        }
+
+        public ViewResult IndexByDestination(int id)
+        {
+            var model = postRepo.GetByDestinationID(id);
+            return View(model);
+        }
     }
 }

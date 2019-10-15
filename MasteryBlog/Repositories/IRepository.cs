@@ -10,5 +10,7 @@ namespace MasteryBlog.Repositories
         IEnumerable<T> GetAll();
 
         T GetByID(int id);
+
+        IEnumerable<T> GetByDestinationID(int id);
     }
 }

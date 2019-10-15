@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MasteryBlog.Data;
-using MasteryBlog.Models.Post;
+using MasteryBlog.Models;
 
 namespace MasteryBlog.Repositories
 {
@@ -16,19 +16,42 @@ namespace MasteryBlog.Repositories
             this.db = db;
         }
         
-        public IEnumerable<Post> GetAll()
+        public int Count()
         {
-            return db.Posts;
+            return db.Posts.Count();
         }
 
-        //public IEnumerable<Post> GetByProductID(int postID)
-        //{
-        //    var posts = db.Posts.Where()
-        //}
+        public void Create(Post post)
+        {
+            db.Posts.Add(post);
+            db.SaveChanges();
+        }
 
         public Post GetByID(int id)
         {
             return db.Posts.Single(p => p.ID == id);
+        }
+
+        public IEnumerable<Post> GetAll()
+        {
+            return db.Posts.ToList();
+        }
+
+        public IEnumerable<Post> GetByDestinationID(int destinationID)
+        {
+            var posts = db.Posts.Where(p => p.DestinationID == destinationID);
+            return posts;
+        }
+
+        public void Save()
+        {
+            db.SaveChanges();
+        }
+
+        public void Delete(Post post)
+        {
+            db.Posts.Remove(post);
+            db.SaveChanges();
         }
     }
 }
