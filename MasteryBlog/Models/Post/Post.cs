@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MasteryBlog.Models.Post
+namespace MasteryBlog.Models
 {
     public class Post
     {
@@ -15,8 +15,8 @@ namespace MasteryBlog.Models.Post
         public string Category { get; set; }
         public string Tags { get; set; }
 
-        //public virtual int DestinationID { get; set; }
-        //public virtual Destination Destination { get; set; }
+        public virtual int DestinationID { get; set; }
+        public virtual Destination Destination { get; set; }
 
         public Post()
         {

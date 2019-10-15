@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MasteryBlog.Models.Destination
+namespace MasteryBlog.Models
 {
     public class Destination
     {
@@ -12,7 +12,7 @@ namespace MasteryBlog.Models.Destination
         public string Name { get; set; }
         public string Description { get; set; }
 
-        //public virtual ICollection<Post> Posts { get; set; }
+        public virtual ICollection<Post> Posts { get; set; }
 
         public Destination()
         {

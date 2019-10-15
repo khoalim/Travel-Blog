@@ -5,7 +5,7 @@ using Xunit;
 using System.Linq;
 using MasteryBlog.Repositories;
 using MasteryBlog.Data;
-using MasteryBlog.Models.Post;
+using MasteryBlog.Models;
 
 namespace MasteryBlog.Tests
 {

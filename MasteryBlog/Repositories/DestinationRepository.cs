@@ -1,5 +1,5 @@
 ﻿using MasteryBlog.Data;
-using MasteryBlog.Models.Destination;
+using MasteryBlog.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,33 +11,49 @@ namespace MasteryBlog.Repositories
     {
         private BlogContext db;
 
+        public DestinationRepository()
+        {
+        }
+
         public DestinationRepository(BlogContext db)
         {
             this.db = db;
         }
 
-
-
-        public List<Destination> destinationsList;
-        public DestinationRepository()
+        public int Count()
         {
-            destinationsList = new List<Destination>()
-            {
-                new Destination(1, "/Images/FamilyVacation.jpg", "Family Getaway", "Great for family fun"),
-                new Destination(2, "/Images/BusinessTrip.jpg", "Business Trip", "Work hard, Play hard"),
-                new Destination(3, "/Images/Retirement.jpg", "Retirement", "Top of the bucket-list"),
-                new Destination(4, "/Images/Honeymoon.jpg", "Honeymoon", "Paradise")
-            };
+            return db.Destinations.Count();
         }
 
         public IEnumerable<Destination> GetAll()
         {
-            return destinationsList;
+            return db.Destinations.ToList();
+        }
+
+        public IEnumerable<Destination> GetByDestinationID(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public Destination GetByID(int id)
         {
-            return destinationsList.Single(d => d.Id == id);
+            return db.Destinations.Single(d => d.Id == id);
         }
+
+        public void Save()
+        {
+            db.SaveChanges();
+        }
+        //public List<Destination> destinationsList;
+        //public DestinationRepository()
+        //{
+        //    destinationsList = new List<Destination>()
+        //    {
+        //        new Destination(1, "/Images/FamilyVacation.jpg", "Family Getaway", "Great for family fun"),
+        //        new Destination(2, "/Images/BusinessTrip.jpg", "Business Trip", "Work hard, Play hard"),
+        //        new Destination(3, "/Images/Retirement.jpg", "Retirement", "Top of the bucket-list"),
+        //        new Destination(4, "/Images/Honeymoon.jpg", "Honeymoon", "Paradise")
+        //    };
+        //}
     }
 }

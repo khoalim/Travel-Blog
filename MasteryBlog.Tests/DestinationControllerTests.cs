@@ -4,7 +4,7 @@ using Xunit;
 using MasteryBlog.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using MasteryBlog.Repositories;
-using MasteryBlog.Models.Destination;
+using MasteryBlog.Models;
 
 namespace MasteryBlog.Tests
 {
