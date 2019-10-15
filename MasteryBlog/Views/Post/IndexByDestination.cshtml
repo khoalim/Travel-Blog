@@ -28,9 +28,17 @@
                     <hr />
                 </article>
             }
-            <p><a href="/Destination/Details/@Model.First().DestinationID">Go back to Destination Details</a></p>
         </section>
     </div>
+    <div>
+        <section id="CreateForm">
+            <form action="/IndexByDestination/CreateByDestinationID/@Model.First().DestinationID" method="get">
+                <input type="submit" value="Add New Post" /><br />
+            </form>
+        </section>
+    </div>
+
+    <p><a href="/Destination/Details/@Model.First().DestinationID">Go back to Destination Details</a></p>
     <p><a href="/Destination/Index/">Go back to home</a></p>
 
     <footer><h6>&copy; Travel Blog 2019</h6></footer>

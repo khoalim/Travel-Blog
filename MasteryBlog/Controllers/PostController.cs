@@ -28,5 +28,25 @@ namespace MasteryBlog.Controllers
             var model = postRepo.GetByDestinationID(id);
             return View(model);
         }
+
+        [HttpGet]
+        public ViewResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(Post post)
+        {
+            postRepo.Create(post);
+            return RedirectToAction("IndexByDestination", new { id = post.DestinationID });
+        }
+
+        [HttpGet]
+        public ViewResult CreateByDestinationID(int id)
+        {
+            ViewBag.DestinationID = id;
+            return View();
+        }
     }
 }

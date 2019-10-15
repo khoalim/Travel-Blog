@@ -10,6 +10,8 @@ namespace MasteryBlog.Repositories
         IEnumerable<T> GetAll();
 
         T GetByID(int id);
+        void Create(T obj);
+       
 
         IEnumerable<T> GetByDestinationID(int id);
     }

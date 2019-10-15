@@ -25,6 +25,12 @@ namespace MasteryBlog.Repositories
             return db.Destinations.Count();
         }
 
+        public void Create(Destination destination)
+        {
+            db.Destinations.Add(destination);
+            db.SaveChanges();
+        }
+
         public IEnumerable<Destination> GetAll()
         {
             return db.Destinations.ToList();
