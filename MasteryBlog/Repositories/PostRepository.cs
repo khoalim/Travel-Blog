@@ -37,9 +37,9 @@ namespace MasteryBlog.Repositories
             return db.Posts.ToList();
         }
 
-        public IEnumerable<Post> GetByDestinationID(int destinationID)
+        public IEnumerable<Post> GetByCategoryID(int categoryID)
         {
-            var posts = db.Posts.Where(p => p.DestinationID == destinationID);
+            var posts = db.Posts.Where(p => p.CategoryID == categoryID);
             return posts;
         }
 

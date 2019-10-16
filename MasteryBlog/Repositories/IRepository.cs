@@ -13,6 +13,6 @@ namespace MasteryBlog.Repositories
         void Create(T obj);
        
 
-        IEnumerable<T> GetByDestinationID(int id);
+        IEnumerable<T> GetByCategoryID(int id);
     }
 }

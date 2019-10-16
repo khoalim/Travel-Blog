@@ -12,25 +12,23 @@ namespace MasteryBlog.Models
         public string Body { get; set; }
         public string Author { get; set; }
         public DateTime PublishDate { get; set; }
-        public string Category { get; set; }
         public string Tags { get; set; }
 
-        public virtual int DestinationID { get; set; }
-        public virtual Destination Destination { get; set; }
+        public virtual int CategoryID { get; set; }
+        public virtual Category Category { get; set; }
 
         public Post()
         {
 
         }
 
-        public Post(int id, string title, string body, string author, DateTime publishDate, string category, string tags)
+        public Post(int id, string title, string body, string author, DateTime publishDate, string tags)
         {
             this.ID = id;
             this.Title = title;
             this.Body = body;
             this.Author = author;
-            this.PublishDate = publishDate;
-            this.Category = category;
+            this.PublishDate = publishDate;            
             this.Tags = tags;
         }
     }

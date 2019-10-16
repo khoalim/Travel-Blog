@@ -8,19 +8,19 @@ using MasteryBlog.Models;
 
 namespace MasteryBlog.Tests
 {
-    public class DestinationControllerTests
+    public class CategoryControllerTests
     {
-        IRepository<Destination> destinationRepo;
+        IRepository<Category> categoryRepo;
 
-        public DestinationControllerTests()
+        public CategoryControllerTests()
         {
-            destinationRepo = new DestinationRepository();
+            categoryRepo = new CategoryRepository();
         }
 
         [Fact]
         public void Index_Returns_A_View()
         {
-            var underTest = new DestinationController(destinationRepo);
+            var underTest = new CategoryController(categoryRepo);
 
             var result = underTest.Index();
 

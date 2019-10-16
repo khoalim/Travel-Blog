@@ -1,4 +1,4 @@
-﻿@model MasteryBlog.Models.Destination
+﻿@model MasteryBlog.Models.Category
 
 @{
     Layout = null;
@@ -12,18 +12,18 @@
     <title>@Model.Name Page</title>
 </head>
 <body>
-    <h1>Destination Details for @Model.Name</h1>
+    <h1> Details for @Model.Name</h1>
     <div>
         <p><img src="@Model.Image" alt=@Model.Name style="height: 200px; width: 340px;" /></p>
         <p><span>@Model.Name</span></p>
         <p>Description: <span>@Model.Description</span></p>
         <hr/>
-        <p><a href="/Post/IndexByDestination/@Model.Id">View  all posts</a></p>
+        <p><a href="/Post/PostByCategory/@Model.Id">View All Blog Posts</a></p>
     </div>
 
-    <p><a href="/Home/Index">Go Back to Home</a></p>
-    <p><a href="/Destination/Index">Go Back To All Destinations</a></p>
-    <footer><h6>&copy; Destination Blog 2019</h6></footer>
+    <p><a href="/Home/Index">Go Back to Home Page</a></p>
+    <p><a href="/Category/Index">Go Back To All Categories</a></p>
+    <footer><h6>&copy; Travel Blog 2019</h6></footer>
 
 </body>
 </html>

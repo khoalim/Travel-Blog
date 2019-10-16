@@ -12,11 +12,11 @@
     <title>Blog Posts</title>
 </head>
 <body>
-    <h1>Posts for @Model.First().Destination.Name</h1>
+    <h1>Posts for @Model.First().Category.Name</h1>
     <div>
         <section id="Destinations">
 
-            <img src="@Model.First().Destination.Image" alt="@Model.First().Destination.Name" style="height:15rem; width:21px;"/>
+            <img src="@Model.First().Category.Image" alt="@Model.First().Category.Name" style="height:15rem; width:21px;"/>
 
             @foreach (var posts in Model)
             {
@@ -24,13 +24,13 @@
                     <p>Title: @posts.Title</p>
                     <p>Body: @posts.Body</p>
                     <p>Author: @posts.Author</p>
-                    <p>Category: @posts.Category</p>
+                   
                 </article>
             }
-            <p><a href="/Destination/Details/@Model.First().DestinationID">Destination Details</a></p>
+            <p><a href="/Category/Details/@Model.First().CategoryID">Details for Travel Categories</a></p>
         </section>
     </div>
-    <p><a href="/Destination/Index/">Go back to home</a></p>
+    <p><a href="/Category/Index/">Go back to home</a></p>
 
     <footer><h6>&copy; Travel Blog 2019</h6></footer>
 

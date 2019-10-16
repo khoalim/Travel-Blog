@@ -12,19 +12,19 @@
     <title>Blog Posts</title>
 </head>
 <body>
-    <h1>Posts for @Model.First().Destination.Name</h1>
+    <h1>Posts for @Model.First().Category.Name</h1>
     <div>
         <section id="Destinations">
 
-            <img src="@Model.First().Destination.Image" alt="@Model.First().Destination.Name" style="height:10rem; width:25rem;" /><hr />
+            <img src="@Model.First().Category.Image" alt="@Model.First().Category.Name" style="height:10rem; width:25rem;" /><hr />
 
             @foreach (var posts in Model)
             {
                 <article>
                     <p>Title: @posts.Title</p>
                     <p>Body: @posts.Body</p>
-                    <p>Author: @posts.Author</p>
-                    <p>Category: @posts.Category</p><br >
+                    <p>Author: @posts.Author</p>   
+                    <p>Category: @posts.CategoryID</p>
                     <hr />
                 </article>
             }
@@ -32,14 +32,14 @@
     </div>
     <div>
         <section id="CreateForm">
-            <form action="/IndexByDestination/CreateByDestinationID/@Model.First().DestinationID" method="get">
+            <form action="/PostByCategory/CreateByCategoryID/@Model.First().CategoryID" method="get">
                 <input type="submit" value="Add New Post" /><br />
             </form>
         </section>
     </div>
 
-    <p><a href="/Destination/Details/@Model.First().DestinationID">Go back to Destination Details</a></p>
-    <p><a href="/Destination/Index/">Go back to home</a></p>
+    <p><a href="/Category/Details/@Model.First().CategoryID">Go back to Category Details</a></p>
+    <p><a href="/Category/Index/">Go back to home</a></p>
 
     <footer><h6>&copy; Travel Blog 2019</h6></footer>
 

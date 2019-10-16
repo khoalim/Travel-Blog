@@ -19,7 +19,7 @@ namespace MasteryBlog
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddScoped<IRepository<Destination>, DestinationRepository>();
+            services.AddScoped<IRepository<Category>, CategoryRepository>();
             services.AddScoped<IRepository<Post>, PostRepository>();
             services.AddDbContext<BlogContext>();
         }

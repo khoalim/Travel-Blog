@@ -23,9 +23,9 @@ namespace MasteryBlog.Controllers
             return View(model);
         }
 
-        public ViewResult IndexByDestination(int id)
+        public ViewResult PostByCategory(int id)
         {
-            var model = postRepo.GetByDestinationID(id);
+            var model = postRepo.GetByCategoryID(id);
             return View(model);
         }
 
@@ -39,7 +39,7 @@ namespace MasteryBlog.Controllers
         public ActionResult Create(Post post)
         {
             postRepo.Create(post);
-            return RedirectToAction("IndexByDestination", new { id = post.DestinationID });
+            return RedirectToAction("PostByCategory", new { id = post.CategoryID });
         }
 
         [HttpGet]
