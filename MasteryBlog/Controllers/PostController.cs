@@ -42,7 +42,7 @@ namespace MasteryBlog.Controllers
             postRepo.Create(post);
             return RedirectToAction("PostByCategory", new { id = post.CategoryID });
         }
-
+            
         [HttpGet]
         public ViewResult CreateByCategoryID(int id)
         {
@@ -55,5 +55,22 @@ namespace MasteryBlog.Controllers
         {            
             return View();
         }
+
+        [HttpGet]
+        public ViewResult EditByCategoryID(int id)
+        {
+            var model = postRepo.GetByID(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult EditByCategoryID(Post post)
+        {
+            post.PublishDate = DateTime.Now;
+            postRepo.Edit(post);
+            return RedirectToAction("PostByCategory", new { id = post.CategoryID });
+        }
+
+
     }
 }

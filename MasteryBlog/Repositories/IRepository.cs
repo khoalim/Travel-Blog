@@ -11,6 +11,7 @@ namespace MasteryBlog.Repositories
 
         T GetByID(int id);
         void Create(T obj);
+        void Edit(T obj);
        
 
         IEnumerable<T> GetByCategoryID(int id);

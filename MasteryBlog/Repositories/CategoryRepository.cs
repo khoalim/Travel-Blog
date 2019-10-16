@@ -31,6 +31,12 @@ namespace MasteryBlog.Repositories
             db.SaveChanges();
         }
 
+        public void Edit(Category category)
+        {
+            db.Categories.Update(category);
+            db.SaveChanges();
+        }
+
         public IEnumerable<Category> GetAll()
         {
             return db.Categories.ToList();

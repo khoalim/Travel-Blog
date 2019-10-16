@@ -26,6 +26,13 @@
                     <p>Author: @posts.Author</p>   
                     <p>Category: @posts.Category.Name</p>
                     <p>Publish Date: @posts.PublishDate</p>
+
+                    <section id="Forms">
+                        <form action="/Post/EditByCategoryID/@posts.ID" method="get">
+                            <input type="submit" value="Edit This Post"/>
+                        </form>
+
+                    </section>
                     <hr />
                 </article>
             }

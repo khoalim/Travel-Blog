@@ -53,5 +53,12 @@ namespace MasteryBlog.Repositories
             db.Posts.Remove(post);
             db.SaveChanges();
         }
+
+        public void Edit(Post post)
+        {
+            db.Posts.Update(post);
+            db.SaveChanges();
+
+        }
     }
 }
