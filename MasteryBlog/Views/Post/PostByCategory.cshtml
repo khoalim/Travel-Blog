@@ -24,7 +24,8 @@
                     <p>Title: @posts.Title</p>
                     <p>Body: @posts.Body</p>
                     <p>Author: @posts.Author</p>   
-                    <p>Category: @posts.CategoryID</p>
+                    <p>Category: @posts.Category.Name</p>
+                    <p>Publish Date: @posts.PublishDate</p>
                     <hr />
                 </article>
             }
@@ -32,7 +33,7 @@
     </div>
     <div>
         <section id="CreateForm">
-            <form action="/PostByCategory/CreateByCategoryID/@Model.First().CategoryID" method="get">
+            <form action="/Post/CreateByCategoryID/@Model.First().CategoryID" method="get">
                 <input type="submit" value="Add New Post" /><br />
             </form>
         </section>

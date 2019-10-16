@@ -37,15 +37,22 @@ namespace MasteryBlog.Controllers
 
         [HttpPost]
         public ActionResult Create(Post post)
-        {
+        {            
+            post.PublishDate = DateTime.Now;
             postRepo.Create(post);
             return RedirectToAction("PostByCategory", new { id = post.CategoryID });
         }
 
         [HttpGet]
-        public ViewResult CreateByDestinationID(int id)
+        public ViewResult CreateByCategoryID(int id)
         {
-            ViewBag.DestinationID = id;
+            ViewBag.CategoryID = id;
+            return View();
+        }
+
+        [HttpGet]
+        public ViewResult CreatePostFromIndex()
+        {            
             return View();
         }
     }
