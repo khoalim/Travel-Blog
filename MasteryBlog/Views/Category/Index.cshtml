@@ -12,16 +12,16 @@
     <title>Travel Blog Categories</title>
 </head>
 <body>
-    <h1>List of Travel Blog Categories</h1>
+    <h1>All Blog Categories</h1>
     @foreach (var category in Model)
     {
         <article>
             <p><a href="/Category/Details/@category.Id">@category.Name</a></p>
             <img src="@category.Image" alt="@category.Name" style="height: 120px; width: 200px;" />
-        </article>
+        </article><br />
     }
 
-    <a href="/Home/Index">Go Back</a>
+    <a href="/Home/Index">Home Page</a>
 
 </body>
 </html>

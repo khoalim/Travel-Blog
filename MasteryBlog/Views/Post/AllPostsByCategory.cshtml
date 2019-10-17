@@ -21,7 +21,7 @@
             @foreach (var category in Model)
                 {
                     <article>
-                        <p><a href="/Category/Details/@category.Id">@category.Name</a></p>
+                        <p><h3><a href="/Category/Details/@category.Id"> Blog Category: @category.Name</a></h3></p>
                         <img src="@category.Image" alt="@category.Name" style="height: 120px; width: 200px;" />
                         
                         @foreach (var posts in category.Posts)
@@ -47,8 +47,14 @@
             @*<p><a href="/Category/Details/@Model.First().ID">Details for Travel Categories</a></p>*@
         </section>
     </div>
-    <p><a href="/Category/Index/">Go Back To Home Page</a></p><br />
-    <p><a href="/Post/CreatePostFromIndex/">Create New Post</a></p>
+    <p><a href="/Home/Index/"> Home Page</a></p><br />
+    <section id="Forms">
+        <form action="/Post/CreatePostFromIndex/" method="get">
+                <input type="submit" value="Add New Post" /><br />
+            </form>
+    </section>
+
+    @*<p><a href="/Post/CreatePostFromIndex/">Create New Post</a></p>*@
     
 
     <footer><h6>&copy; Travel Blog 2019</h6></footer>
