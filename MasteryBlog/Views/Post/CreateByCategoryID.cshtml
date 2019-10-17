@@ -35,27 +35,37 @@
                     <input asp-for="Author" class="form-control" />
                     <span asp-validation-for="Author" class="text-danger"></span>
                 </div>
-                <div class="form-group">
-                    @*<label asp-for="PublishDate" class="control-label"></label>*@
+                @*<div class="form-group">
+                    <label asp-for="PublishDate" class="control-label"></label>
                     <input type="hidden" class="form-control" value="@ViewBag.PublishDate"/>
                     <span asp-validation-for="PublishDate" class="text-danger"></span>
-                </div>
-                @*<div class="form-group">
-                    <label asp-for="Category" class="control-label"></label>
-                    <select name="Category">
-                        <option value="1">Family Getaway</option>
-                        <option value="2">Business Trip</option>
-                        <option value="3">Retirement</option>
-                        <option value="4">Honeymoon</option>
-                    </select>*@
-                    @*<input asp-for="Category" class="form-control" />*@
-                    @*<span asp-validation-for="Category" class="text-danger"></span>*@
-                @*</div>*@
+                </div>*@
+
+
                 <div class="form-group">
+                    Tags
+                    @*<label asp-for="PostTags" class="control-label"></label>*@
+                    <select name="@ViewBag.TagID">
+                        @foreach (var tag in ViewBag.TagList)
+                        {
+                            <option value="@tag.TagID">@tag.Name</option>
+                        }
+                        @*<option value="1">Adventure</option>
+                        <option value="2">Beach</option>
+                        <option value="3">Explore</option>
+                        <option value="4">Tour Guide</option>
+                        <option value="5">Child Friendly</option>
+                        <option value="6">Newlyweds</option>*@
+                    </select>
+                    <span asp-validation-for="Category" class="text-danger"></span>
+                </div>
+
+
+                @*<div class="form-group">
                     <label asp-for="Tags" class="control-label"></label>
                     <input asp-for="Tags" class="form-control" />
                     <span asp-validation-for="Tags" class="text-danger"></span>
-                </div>
+                </div>*@
                 <div class="form-group">
                     @*<label asp-for="DestinationID" class="control-label"></label>*@
                     <input type="hidden" name="CategoryID" class="form-control" value="@ViewBag.CategoryID" />
@@ -68,7 +78,7 @@
     </div>
 
     <div>
-        <a asp-action="Index">Back to List</a>
+        <a asp-action="PostsIndex">Back to List</a>
     </div>
 
 </body>

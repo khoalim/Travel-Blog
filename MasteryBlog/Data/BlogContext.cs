@@ -13,6 +13,9 @@ namespace MasteryBlog.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<Post> Posts { get; set; }
 
+        public DbSet<Tag> Tags { get; set; }
+        public DbSet<PostTag> PostTags { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var connectionString = "Server=(localdb)\\mssqllocaldb;Database=BlogTesting;Trusted_Connection=True;";
@@ -25,6 +28,9 @@ namespace MasteryBlog.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+            modelBuilder.Entity<PostTag>().HasKey(pt => new { pt.PostID, pt.TagID });
+
             modelBuilder.Entity<Category>().HasData(
                 new Category()
                 {
@@ -133,6 +139,98 @@ namespace MasteryBlog.Data
                    CategoryID = 4
                }
                );
+
+            modelBuilder.Entity<Tag>().HasData(
+                new Tag()
+                {
+                    TagID = 1,
+                    Name = "Adventure"
+                },
+
+                new Tag()
+                {
+                    TagID = 2,
+                    Name = "Beach"
+                },
+
+                new Tag()
+                {
+                    TagID = 3,
+                    Name = "Explore"
+                },
+
+                new Tag()
+                {
+                    TagID = 4,
+                    Name = "Tour Guide"
+                },
+
+                new Tag()
+                {
+                    TagID = 5,
+                    Name = "Child Friendly"
+                },
+
+                new Tag()
+                {
+                    TagID = 6,
+                    Name = "Newlyweds"
+                }
+                );
+
+            modelBuilder.Entity<PostTag>().HasData(
+                new PostTag()
+                {
+                    PostID = 1,
+                    TagID = 1
+                },
+
+                new PostTag()
+                {
+                    PostID = 1,
+                    TagID = 5
+                },
+
+                new PostTag()
+                {
+                    PostID = 3,
+                    TagID = 3
+                },
+
+                new PostTag()
+                {
+                    PostID = 3,
+                    TagID = 4
+                },
+
+                new PostTag()
+                {
+                    PostID = 5,
+                    TagID = 2
+                },
+
+                new PostTag()
+                {
+                    PostID = 5,
+                    TagID = 4
+                },
+
+                new PostTag()
+                {
+                    PostID = 7,
+                    TagID = 1
+                },
+
+                new PostTag()
+                {
+                    PostID = 7,
+                    TagID = 6
+                }
+                );
+
+
+
+
 
 
         }

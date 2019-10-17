@@ -12,14 +12,16 @@ namespace MasteryBlog.Controllers
     {
         IRepository<Post> postRepo;
         IRepository<Category> categoryRepo;
+        TagRepository tagRepo;
 
-        public PostController(IRepository<Post> postRepo, IRepository<Category> categoryRepo)
+        public PostController(IRepository<Post> postRepo, IRepository<Category> categoryRepo, TagRepository tagRepo)
         {
             this.postRepo = postRepo;
             this.categoryRepo = categoryRepo;
+            this.tagRepo = tagRepo;
         }
 
-        public ViewResult AllPostsByCategory()
+        public ViewResult PostsIndex()
         {
             var model = categoryRepo.GetAll();
             return View(model);
@@ -41,6 +43,7 @@ namespace MasteryBlog.Controllers
         public ActionResult Create(Post post)
         {            
             post.PublishDate = DateTime.Now;
+            var TagID = ViewBag.TagID;
             postRepo.Create(post);
             return RedirectToAction("PostByCategory", new { id = post.CategoryID });
         }
@@ -49,6 +52,7 @@ namespace MasteryBlog.Controllers
         public ViewResult CreateByCategoryID(int id)
         {
             ViewBag.CategoryID = id;
+            ViewBag.TagList = tagRepo.GetAllTagNames();
             return View();
         }
 

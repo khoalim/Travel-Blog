@@ -43,24 +43,25 @@
                     <span asp-validation-for="PublishDate" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="CategoryID" class="control-label"></label>             
+                    @*<label asp-for="CategoryID" class="control-label"></label>*@             
                     <input type="hidden" name="CategoryID" class="form-control" value="@Model.CategoryID"/>
                     <span asp-validation-for="CategoryID" class="text-danger"></span>
                 </div>
-                <div class="form-group">
+                @*<div class="form-group">
                     <label asp-for="Tags" class="control-label"></label>
                     <input asp-for="Tags" class="form-control" />
                     <span asp-validation-for="Tags" class="text-danger"></span>
-                </div>
+                </div>*@
                 <div class="form-group">
                     <input type="submit" value="Save" class="btn btn-default" />
                 </div>
             </form>
+                    <br />
         </div>
     </div>
 
     <div>
-        <a asp-action="IndexByCategories">Back to List</a>
+        <a asp-action="PostsIndex">Back To All Posts</a>
         <p><a href="/Home/Index/">Go Back To Home Page</a></p><br />
     </div>
 

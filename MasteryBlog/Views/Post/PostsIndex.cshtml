@@ -26,20 +26,25 @@
                         
                         @foreach (var posts in category.Posts)
                            {
-                                <article>
-                                    <p>Title: @posts.Title</p>
-                                    <p>Body: @posts.Body</p>
-                                    <p>Author: @posts.Author</p>
-                                    <p>Category: @posts.Category.Name</p>
-                                    <p>Publish Date: @posts.PublishDate</p>
+                        <article>
+                            <p>Title: @posts.Title</p>
+                            <p>Body: @posts.Body</p>
+                            <p>Author: @posts.Author</p>
+                            <p>Category: @posts.Category.Name</p>
+                            <p>Publish Date: @posts.PublishDate</p>
+                            @foreach (var postTag in posts.PostTags)
+                            {
+                                <p>Tags: @postTag.Tag.Name</p>
+                            }
 
-                                    <section id="Forms">
-                                        <form action="/Post/EditByCategoryID/@posts.ID" method="get">
-                                            <input type="submit" value="Edit This Post" />
-                                        </form>
-                                    </section>
-                                  <hr />
-                                </article>
+
+                            <section id="Forms">
+                                <form action="/Post/EditByCategoryID/@posts.ID" method="get">
+                                    <input type="submit" value="Edit This Post" />
+                                </form>
+                            </section>
+                            <hr />
+                        </article>
                            }
                     </article>
                 }
