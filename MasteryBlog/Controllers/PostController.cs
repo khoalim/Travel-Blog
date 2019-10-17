@@ -11,15 +11,17 @@ namespace MasteryBlog.Controllers
     public class PostController : Controller
     {
         IRepository<Post> postRepo;
+        IRepository<Category> categoryRepo;
 
-        public PostController(IRepository<Post> postRepo)
+        public PostController(IRepository<Post> postRepo, IRepository<Category> categoryRepo)
         {
             this.postRepo = postRepo;
+            this.categoryRepo = categoryRepo;
         }
 
-        public ViewResult Index()
+        public ViewResult AllPostsByCategory()
         {
-            var model = postRepo.GetAll();
+            var model = categoryRepo.GetAll();
             return View(model);
         }
 
