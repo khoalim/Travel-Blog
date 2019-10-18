@@ -37,7 +37,7 @@
                 </div>
                 <div class="form-group">
                     @*<label asp-for="PublishDate" class="control-label"></label>*@
-                    <input type="hidden" class="form-control" value="@ViewBag.PublishDate"/>
+                    <input type="hidden" class="form-control" @*value="@ViewBag.PublishDate"*@/>
                     <span asp-validation-for="PublishDate" class="text-danger"></span>
                 </div>
                 <div class="form-group">
@@ -48,8 +48,8 @@
                         <option value="3">Retirement</option>
                         <option value="4">Honeymoon</option>
                     </select>
-                    @*<input asp-for="Category" class="form-control" />
-                    <span asp-validation-for="Category" class="text-danger"></span>*@
+                    @*<input asp-for="Category" class="form-control" />*@
+                    <span asp-validation-for="Category" class="text-danger"></span>
                 </div>
                 @*<div class="form-group">
                     <label asp-for="Tags" class="control-label"></label>
@@ -68,7 +68,8 @@
     </div>
 
     <div>
-        <a asp-action="Index">Back to List</a>
+        <a asp-action="PostsIndex">Back To All Posts</a>
+        <p><a href="/Home/Index/">Go Back To Home Page</a></p><br />
     </div>
 
 </body>

@@ -20,10 +20,10 @@ namespace MasteryBlog.Repositories
             this.db = db;
         }
 
-        public IEnumerable<Tag> GetAllTagNames()
-        {
-            return db.Tags.ToList();
-        }
+        //public IEnumerable<Tag> GetAllTagNames()
+        //{
+        //    return db.Tags.ToList();
+        //}
 
     }
 }

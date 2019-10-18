@@ -12,13 +12,13 @@ namespace MasteryBlog.Controllers
     {
         IRepository<Post> postRepo;
         IRepository<Category> categoryRepo;
-        TagRepository tagRepo;
+        //TagRepository tagRepo;
 
-        public PostController(IRepository<Post> postRepo, IRepository<Category> categoryRepo, TagRepository tagRepo)
+        public PostController(IRepository<Post> postRepo, IRepository<Category> categoryRepo/*, TagRepository tagRepo*/)
         {
             this.postRepo = postRepo;
             this.categoryRepo = categoryRepo;
-            this.tagRepo = tagRepo;
+            //this.tagRepo = tagRepo;
         }
 
         public ViewResult PostsIndex()
@@ -43,16 +43,16 @@ namespace MasteryBlog.Controllers
         public ActionResult Create(Post post)
         {            
             post.PublishDate = DateTime.Now;
-            var TagID = ViewBag.TagID;
+            //var TagID = ViewBag.TagID;
             postRepo.Create(post);
             return RedirectToAction("PostByCategory", new { id = post.CategoryID });
         }
-            
+
         [HttpGet]
         public ViewResult CreateByCategoryID(int id)
         {
             ViewBag.CategoryID = id;
-            ViewBag.TagList = tagRepo.GetAllTagNames();
+            //ViewBag.TagList = tagRepo.GetAllTagNames();
             return View();
         }
 
@@ -76,6 +76,21 @@ namespace MasteryBlog.Controllers
             postRepo.Edit(post);
             return RedirectToAction("PostByCategory", new { id = post.CategoryID });
         }
+
+        [HttpGet]
+        public ViewResult DeleteByCategoryID(int id)
+        {
+            var model = postRepo.GetByID(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(Post post)
+        {
+            postRepo.Delete(post);
+            return RedirectToAction("PostByCategory", new { id = post.CategoryID });
+        }
+
 
 
     }

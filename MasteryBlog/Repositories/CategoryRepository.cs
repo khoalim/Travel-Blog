@@ -37,6 +37,12 @@ namespace MasteryBlog.Repositories
             db.SaveChanges();
         }
 
+        public void Delete(Category category)
+        {
+            db.Categories.Remove(category);
+            db.SaveChanges();
+        }
+
         public IEnumerable<Category> GetAll()
         {
             return db.Categories.ToList();

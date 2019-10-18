@@ -35,29 +35,29 @@
                     <input asp-for="Author" class="form-control" />
                     <span asp-validation-for="Author" class="text-danger"></span>
                 </div>
-                @*<div class="form-group">
+                <div class="form-group">
                     <label asp-for="PublishDate" class="control-label"></label>
-                    <input type="hidden" class="form-control" value="@ViewBag.PublishDate"/>
+                    <input type="hidden" class="form-control" @*value="@ViewBag.PublishDate"*@/>
                     <span asp-validation-for="PublishDate" class="text-danger"></span>
-                </div>*@
+                </div>
 
 
                 <div class="form-group">
                     Tags
                     @*<label asp-for="PostTags" class="control-label"></label>*@
-                    <select name="@ViewBag.TagID">
+                    @*<select name="@ViewBag.TagID">
                         @foreach (var tag in ViewBag.TagList)
                         {
                             <option value="@tag.TagID">@tag.Name</option>
-                        }
+                        }*@
                         @*<option value="1">Adventure</option>
                         <option value="2">Beach</option>
                         <option value="3">Explore</option>
                         <option value="4">Tour Guide</option>
                         <option value="5">Child Friendly</option>
                         <option value="6">Newlyweds</option>*@
-                    </select>
-                    <span asp-validation-for="Category" class="text-danger"></span>
+                    @*</select>*@
+                    @*<span asp-validation-for="Category" class="text-danger"></span>*@
                 </div>
 
 
@@ -78,7 +78,8 @@
     </div>
 
     <div>
-        <a asp-action="PostsIndex">Back to List</a>
+        <a asp-action="PostsIndex">Back To All Posts</a>
+        <p><a href="/Home/Index/">Go Back To Home Page</a></p><br />
     </div>
 
 </body>

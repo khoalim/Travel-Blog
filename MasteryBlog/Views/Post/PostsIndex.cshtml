@@ -32,15 +32,21 @@
                             <p>Author: @posts.Author</p>
                             <p>Category: @posts.Category.Name</p>
                             <p>Publish Date: @posts.PublishDate</p>
-                            @foreach (var postTag in posts.PostTags)
-                            {
-                                <p>Tags: @postTag.Tag.Name</p>
-                            }
+                            @*@foreach (var postTag in posts.PostTags)
+        {
+            <p>Tags: @postTag.Tag.Name</p>
+        }*@
 
 
-                            <section id="Forms">
+                            <section id="EditForm">
                                 <form action="/Post/EditByCategoryID/@posts.ID" method="get">
                                     <input type="submit" value="Edit This Post" />
+                                </form>
+                            </section>
+
+                            <section id="DeleteForm">
+                                <form action="/Post/DeleteByCategoryID/@posts.ID" method="get">
+                                    <input type="submit" value="Delete This Post" />
                                 </form>
                             </section>
                             <hr />
