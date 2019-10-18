@@ -10,7 +10,10 @@ namespace MasteryBlog.Repositories
         IEnumerable<T> GetAll();
 
         T GetByID(int id);
+        void Create(T obj);
+        void Edit(T obj);
+        void Delete(T obj);
 
-        IEnumerable<T> GetByDestinationID(int id);
+        IEnumerable<T> GetByCategoryID(int id);
     }
 }

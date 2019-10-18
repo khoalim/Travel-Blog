@@ -8,24 +8,24 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MasteryBlog.Controllers
 {
-    public class DestinationController  : Controller
+    public class CategoryController  : Controller
     {
-        IRepository<Destination> destinationRepo;
+        IRepository<Category> categoryRepo;
 
-        public DestinationController(IRepository<Destination> destinationRepo)
+        public CategoryController(IRepository<Category> categoryRepo)
         {
-            this.destinationRepo = destinationRepo;
+            this.categoryRepo = categoryRepo;
         }
 
         public ViewResult Index()
         {
-            var model = destinationRepo.GetAll();
+            var model = categoryRepo.GetAll();
             return View(model);
         }
 
         public ViewResult Details(int id)
         {
-            var model = destinationRepo.GetByID(id);
+            var model = categoryRepo.GetByID(id);
             return View(model);
         }
     }

@@ -1,0 +1,29 @@
+﻿@model MasteryBlog.Models.Category
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@Model.Name Page</title>
+</head>
+<body>
+    <h1> Details for @Model.Name</h1>
+    <div>
+        <p><img src="@Model.Image" alt=@Model.Name style="height: 200px; width: 340px;" /></p>
+        <p>Category: <span>@Model.Name</span></p>
+        <p>Description: <span>@Model.Description</span></p>
+        <p>Posts: <a href="/Post/PostByCategory/@Model.Id">View Posts for @Model.Name</a></p>
+        <hr/>
+    </div>
+
+    <p><a href="/Home/Index">Home Page</a></p>
+    <p><a href="/Category/Index">Back To All Blog Categories</a></p>
+    <footer><h6>&copy; Travel Blog 2019</h6></footer>
+
+</body>
+</html>

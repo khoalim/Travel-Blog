@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MasteryBlog.Models
 {
-    public class Destination
+    public class Category
     {
         public int Id {get; set;}
         public string Image { get; set; }
@@ -14,11 +14,11 @@ namespace MasteryBlog.Models
 
         public virtual ICollection<Post> Posts { get; set; }
 
-        public Destination()
+        public Category()
         {
         }
 
-        public Destination(int id, string image, string name, string description)
+        public Category(int id, string image, string name, string description)
         {
             this.Id = id;
             this.Image = image;

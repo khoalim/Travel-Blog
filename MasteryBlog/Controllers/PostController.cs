@@ -11,22 +11,87 @@ namespace MasteryBlog.Controllers
     public class PostController : Controller
     {
         IRepository<Post> postRepo;
+        IRepository<Category> categoryRepo;
+        //TagRepository tagRepo;
 
-        public PostController(IRepository<Post> postRepo)
+        public PostController(IRepository<Post> postRepo, IRepository<Category> categoryRepo/*, TagRepository tagRepo*/)
         {
             this.postRepo = postRepo;
+            this.categoryRepo = categoryRepo;
+            //this.tagRepo = tagRepo;
         }
 
-        public ViewResult Index()
+        public ViewResult PostsIndex()
         {
-            var model = postRepo.GetAll();
+            var model = categoryRepo.GetAll();
             return View(model);
         }
 
-        public ViewResult IndexByDestination(int id)
+        public ViewResult PostByCategory(int id)
         {
-            var model = postRepo.GetByDestinationID(id);
+            var model = postRepo.GetByCategoryID(id);
             return View(model);
         }
+
+        [HttpGet]
+        public ViewResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(Post post)
+        {            
+            post.PublishDate = DateTime.Now;
+            //var TagID = ViewBag.TagID;
+            postRepo.Create(post);
+            return RedirectToAction("PostByCategory", new { id = post.CategoryID });
+        }
+
+        [HttpGet]
+        public ViewResult CreateByCategoryID(int id)
+        {
+            ViewBag.CategoryID = id;
+            //ViewBag.TagList = tagRepo.GetAllTagNames();
+            return View();
+        }
+
+        [HttpGet]
+        public ViewResult CreatePostFromIndex()
+        {            
+            return View();
+        }
+
+        [HttpGet]
+        public ViewResult EditByCategoryID(int id)
+        {
+            var model = postRepo.GetByID(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult EditByCategoryID(Post post)
+        {
+            post.PublishDate = DateTime.Now;
+            postRepo.Edit(post);
+            return RedirectToAction("PostByCategory", new { id = post.CategoryID });
+        }
+
+        [HttpGet]
+        public ViewResult DeleteByCategoryID(int id)
+        {
+            var model = postRepo.GetByID(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(Post post)
+        {
+            postRepo.Delete(post);
+            return RedirectToAction("PostByCategory", new { id = post.CategoryID });
+        }
+
+
+
     }
 }

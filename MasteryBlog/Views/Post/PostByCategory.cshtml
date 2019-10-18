@@ -1,0 +1,66 @@
+﻿@model IEnumerable<MasteryBlog.Models.Post>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Blog Posts</title>
+</head>
+<body>
+    <h1>Posts for @Model.First().Category.Name</h1>
+    <div>
+        <section id="Destinations">
+
+            <img src="@Model.First().Category.Image" alt="@Model.First().Category.Name" style="height:10rem; width:25rem;" /><hr />
+
+            @foreach (var posts in Model)
+            {
+                <article>
+                    <p>Title: @posts.Title</p>
+                    <p>Body: @posts.Body</p>
+                    <p>Author: @posts.Author</p>   
+                    <p>Category: @posts.Category.Name</p>
+                    <p>Publish Date: @posts.PublishDate</p>
+                    @*@foreach (var tag in posts.PostTags)
+                    {
+                        <p>Tags: @tag.Tag.Name</p>
+                    }*@
+
+                    <section id="EditForm">
+                        <form action="/Post/EditByCategoryID/@posts.ID" method="get">
+                            <input type="submit" value="Edit This Post"/>
+                        </form>
+
+                    </section>
+
+                    <section id="DeleteForm">
+                        <form action="/Post/DeleteByCategoryID/@posts.ID" method="get">
+                            <input type="submit" value="Delete This Post"/>
+                        </form>
+                    </section>
+                    <hr />
+                </article>
+            }
+        </section>
+    </div>
+    <div>
+        <section id="CreateForm">
+            <form action="/Post/CreateByCategoryID/@Model.First().CategoryID" method="get">
+                <input type="submit" value="Add New Post" /><br />
+            </form>
+        </section>
+    </div>
+
+    <p><a href="/Category/Details/@Model.First().CategoryID">Back To Category Details</a></p>
+    <p><a href="/Category/Index/">Back To All Blog Categories</a></p>
+    <p><a href="/Home/Index/">Home Page</a></p>
+
+    <footer><h6>&copy; Travel Blog 2019</h6></footer>
+
+</body>
+</html>
