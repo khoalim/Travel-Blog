@@ -11,58 +11,91 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>EditByCategoryID</title>
+    <title>Edit A Post</title>
 </head>
 <body>
 
-    <h4>Post</h4>
+    <h4>Edit A Post</h4>
     <hr />
     <div class="row">
         <div class="col-md-4">
             <form asp-action="EditByCategoryID">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input type="hidden" asp-for="ID" />
+
                 <div class="form-group">
-                    <label asp-for="Title" class="control-label"></label>
-                    <input asp-for="Title" class="form-control" />
+                    <p><label asp-for="Title" class="control-label"></label></p>
+                    <textarea asp-for="Title" rows="1" cols="60" class="form-control"></textarea>
                     <span asp-validation-for="Title" class="text-danger"></span>
                 </div>
+
                 <div class="form-group">
-                    <label asp-for="Body" class="control-label"></label>
-                    <input asp-for="Body" class="form-control" />
+                    <p><label asp-for="Body" class="control-label"></label></p>
+                    <textarea asp-for="Body" rows="6" cols="60" class="form-control"></textarea>
                     <span asp-validation-for="Body" class="text-danger"></span>
                 </div>
+
                 <div class="form-group">
-                    <label asp-for="Author" class="control-label"></label>
-                    <input asp-for="Author" class="form-control" />
+                    <p><label asp-for="Author" class="control-label"></label></p>
+                    <textarea asp-for="Author" rows="1" cols="30" class="form-control"> </textarea>
                     <span asp-validation-for="Author" class="text-danger"></span>
                 </div>
+
                 <div class="form-group">
-                    @*<label asp-for="PublishDate" class="control-label"></label>*@
-                    <input type="hidden" class="form-control" @*value="@ViewBag.PublishDate"*@/>
-                    <span asp-validation-for="PublishDate" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    @*<label asp-for="CategoryID" class="control-label"></label>*@             
-                    <input type="hidden" name="CategoryID" class="form-control" value="@Model.CategoryID"/>
-                    <span asp-validation-for="CategoryID" class="text-danger"></span>
-                </div>
-                @*<div class="form-group">
-                    <label asp-for="Tags" class="control-label"></label>
-                    <input asp-for="Tags" class="form-control" />
-                    <span asp-validation-for="Tags" class="text-danger"></span>
-                </div>*@
-                <div class="form-group">
-                    <input type="submit" value="Save" class="btn btn-default" />
-                </div>
+                    <p><label asp-for="Category" class="control-label"></label></p>
+                    <select name="CategoryID">
+                        <option value="1">Family Getaway</option>
+                        <option value="2">Business Trip</option>
+                        <option value="3">Retirement</option>
+                        <option value="4">Honeymoon</option>
+                    </select>
+                    <span asp-validation-for="Category" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <p>Tags</p>
+                        <select name="Tag Options">
+                            <option value="0">--Select One--</option>
+                            <option value="1">Adventure</option>
+                            <option value="2">Beach</option>
+                            <option value="3">Explore</option>
+                            <option value="4">Tour Guide</option>
+                            <option value="5">Child Friendly</option>
+                            <option value="6">Newlyweds</option>
+                        </select>
+                        <select name="Tag Options">
+                            <option value="0">--Select One--</option>
+                            <option value="1">Adventure</option>
+                            <option value="2">Beach</option>
+                            <option value="3">Explore</option>
+                            <option value="4">Tour Guide</option>
+                            <option value="5">Child Friendly</option>
+                            <option value="6">Newlyweds</option>
+                        </select>
+                    </div><br>
+
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" />
+                        <span asp-validation-for="PublishDate" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="hidden" name="CategoryID" class="form-control" value="@Model.CategoryID" />
+                        <span asp-validation-for="CategoryID" class="text-danger"></span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-default" />
+                    </div>
             </form>
-                    <br />
+                   
         </div>
-    </div>
+    </div><br>
 
     <div>
-        <a asp-action="PostsIndex">Back To All Posts</a>
-        <p><a href="/Home/Index/">Go Back To Home Page</a></p><br />
+        <p><a asp-action="PostsIndex">Back To All Posts</a></p>       
+        <p><a href="/Home/Index/">Go Back To Home Page</a></p>
     </div>
 
 </body>

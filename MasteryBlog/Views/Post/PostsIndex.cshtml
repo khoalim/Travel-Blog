@@ -31,11 +31,11 @@
                             <p>Body: @posts.Body</p>
                             <p>Author: @posts.Author</p>
                             <p>Category: @posts.Category.Name</p>
-                            <p>Publish Date: @posts.PublishDate</p>
-                            @*@foreach (var postTag in posts.PostTags)
-        {
-            <p>Tags: @postTag.Tag.Name</p>
-        }*@
+                            <p>Publish Date: @posts.PublishDate</p>                            
+                            @foreach (var postTag in posts.PostTags)
+                               {
+                                    <p>Tags: @postTag.Tag.Name</p>
+                               }
 
 
                             <section id="EditForm">
