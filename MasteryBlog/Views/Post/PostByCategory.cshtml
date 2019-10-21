@@ -10,6 +10,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Blog Posts</title>
+    <link rel="stylesheet" href="~/Styles/DetailStyle.css" />
 </head>
 <body>
     <h1>Posts for @Model.First().Category.Name</h1>
@@ -57,9 +58,12 @@
         </section>
     </div>
 
-    <p><a href="/Category/Details/@Model.First().CategoryID">Back To Category Details</a></p>
-    <p><a href="/Category/Index/">Back To All Blog Categories</a></p>
-    <p><a href="/Home/Index/">Home Page</a></p>
+    <nav>
+
+        <p><a href="/Home/Index/">Home</a></p>
+        <p><a href="/Category/Details/@Model.First().CategoryID"> Category Details</a></p>
+        <p><a href="/Category/Index/">Categories</a></p>
+    </nav>
 
     <footer><h6>&copy; Travel Blog 2019</h6></footer>
 

@@ -206,6 +206,12 @@ namespace MasteryBlog.Data
                 new PostTag()
                 {
                     PostID = 2,
+                    TagID = 2
+                },
+
+                new PostTag()
+                {
+                    PostID = 2,
                     TagID = 5
                 },
 

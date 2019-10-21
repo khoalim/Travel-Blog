@@ -10,6 +10,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Blog Posts</title>
+    <link rel="stylesheet" href="~/Styles/DetailStyle.css" />
 </head>
 <body>
     <h1>All Blog Posts</h1>
@@ -56,18 +57,20 @@
                     </article>
                 }
 
-            @*<p><a href="/Category/Details/@Model.First().ID">Details for Travel Categories</a></p>*@
+           
         </section>
     </div>
-    <p><a href="/Home/Index/"> Home Page</a></p><br />
+    <nav>
+
+    <p><a href="/Home/Index/">Home</a></p>
+    </nav>
     <section id="Forms">
+
         <form action="/Post/CreatePostFromIndex/" method="get">
                 <input type="submit" value="Add New Post" /><br />
             </form>
     </section>
-
-    @*<p><a href="/Post/CreatePostFromIndex/">Create New Post</a></p>*@
-    
+        
 
     <footer><h6>&copy; Travel Blog 2019</h6></footer>
 
