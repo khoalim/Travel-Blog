@@ -1,0 +1,36 @@
+﻿@model IEnumerable<MasteryBlog.Models.Tag>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Travel Blog Tags</title>
+    <link rel="stylesheet" href="~/Styles/DetailStyle.css" />
+</head>
+<body>
+    <h1>All Blog Tags</h1>
+   
+        <section id="AllTags">
+            @foreach(var tag in Model)
+            {
+                <article>
+                    <p><a href="/Tag/Details/@tag.TagID">@tag.Name</a></p>
+                </article>
+            }
+
+        </section><br />
+   
+
+    <nav>
+    <a href="/Home/Index">Home Page</a>
+    </nav>
+    
+    <footer><h6>&copy; Tavel Blog 2019</h6></footer>
+       
+</body>
+</html>

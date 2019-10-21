@@ -1,0 +1,31 @@
+﻿@model IEnumerable<MasteryBlog.Models.Category>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Travel Blog Categories</title>
+    <link rel="stylesheet" href="~/Styles/DetailStyle.css" />
+</head>
+<body>
+    <h1>All Blog Categories</h1>   
+   
+    
+     @foreach (var category in Model)
+     {
+        <a href="/Category/Details/@category.Id">@category.Name</a>
+        <p><img src="@category.Image" alt="@category.Name" /></p>
+     }
+         
+    <nav>
+    <a href="/Home/Index">Home</a>    
+    </nav>
+
+    <footer><h6>&copy; Travel Blog 2019</h6></footer>
+</body>
+</html>

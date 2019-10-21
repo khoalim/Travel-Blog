@@ -1,0 +1,78 @@
+﻿@model IEnumerable<MasteryBlog.Models.Category>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Blog Posts</title>
+    <link rel="stylesheet" href="~/Styles/DetailStyle.css" />
+</head>
+<body>
+    <h1>All Blog Posts</h1>
+    <div>
+        <section id="Destinations">
+            
+
+            @foreach (var category in Model)
+                {
+                    <article>
+                        <p><h3><a href="/Category/Details/@category.Id"> Blog Category: @category.Name</a></h3></p>
+                        <img src="@category.Image" alt="@category.Name" style="height: 7.5rem; width: 12.5rem;" />
+                        
+                        @foreach (var posts in category.Posts)
+                           {
+                        <article>
+                            <p>Title: @posts.Title</p>
+                            <p>Body: @posts.Body</p>
+                            <p>Author: @posts.Author</p>
+                            <p>Category: @posts.Category.Name</p>
+                            <p>Publish Date: @posts.PublishDate</p>
+                            <p>Tags: </p>
+
+                            @foreach (var tag in posts.PostTags)
+                            {
+                                <p><a href="/Tag/Index/@tag.TagID">@tag.Tag.Name</a></p>                              
+                            }
+
+
+                            <section id="EditForm">
+                                <form action="/Post/EditByCategoryID/@posts.ID" method="get">
+                                    <input type="submit" value="Edit This Post" />
+                                </form>
+                            </section>
+
+                            <section id="DeleteForm">
+                                <form action="/Post/DeleteByCategoryID/@posts.ID" method="get">
+                                    <input type="submit" value="Delete This Post" />
+                                </form>
+                            </section>
+                            <hr />
+                        </article>
+                           }
+                    </article>
+                }
+
+           
+        </section>
+    </div>
+    <nav>
+
+    <p><a href="/Home/Index/">Home</a></p>
+    </nav>
+    <section id="Forms">
+
+        <form action="/Post/CreatePostFromIndex/" method="get">
+                <input type="submit" value="Add New Post" /><br />
+            </form>
+    </section>
+        
+
+    <footer><h6>&copy; Travel Blog 2019</h6></footer>
+
+</body>
+</html>
