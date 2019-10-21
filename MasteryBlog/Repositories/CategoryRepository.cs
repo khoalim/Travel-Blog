@@ -62,6 +62,11 @@ namespace MasteryBlog.Repositories
         {
             db.SaveChanges();
         }
+
+        public IEnumerable<Category> GetByTagID(int id)
+        {
+            throw new NotImplementedException();
+        }
         //public List<Category> categoriesList;
         //public CategoryRepository()
         //{

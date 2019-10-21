@@ -11,7 +11,7 @@ namespace MasteryBlog.Models
         public string Name { get; set; }
 
         public virtual IList<PostTag> PostTags { get; set; }
-
+        
         public Tag()
         {
 

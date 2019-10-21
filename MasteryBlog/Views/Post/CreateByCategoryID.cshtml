@@ -10,64 +10,64 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Create</title>
+    <title>Create New Post By Category</title>
 </head>
 <body>
 
-    <h4>Post</h4>
+    <h4>Create New Post By Category</h4>
     <hr />
     <div class="row">
         <div class="col-md-4">
             <form asp-action="Create" method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
-                    <label asp-for="Title" class="control-label"></label>
-                    <input asp-for="Title" class="form-control" />
+                    <p><label asp-for="Title" class="control-label"></label></p>
+                    <textarea asp-for="Title" rows="1" cols="60"class="form-control"></textarea>
                     <span asp-validation-for="Title" class="text-danger"></span>
                 </div>
+
                 <div class="form-group">
-                    <label asp-for="Body" class="control-label"></label>
-                    <input asp-for="Body" class="form-control" />
+                   <p><label asp-for="Body" class="control-label"></label></p> 
+                    <textarea asp-for="Body" rows="6" cols="60 "class="form-control"></textarea>
                     <span asp-validation-for="Body" class="text-danger"></span>
                 </div>
+
                 <div class="form-group">
-                    <label asp-for="Author" class="control-label"></label>
-                    <input asp-for="Author" class="form-control" />
+                   <p><label asp-for="Author" class="control-label"></label></p> 
+                    <textarea asp-for="Author" rows="1" cols="30" class="form-control"></textarea>
                     <span asp-validation-for="Author" class="text-danger"></span>
                 </div>
+
                 <div class="form-group">
-                    <label asp-for="PublishDate" class="control-label"></label>
-                    <input type="hidden" class="form-control" @*value="@ViewBag.PublishDate"*@/>
+                    <input type="hidden" class="form-control"/>
                     <span asp-validation-for="PublishDate" class="text-danger"></span>
                 </div>
 
 
                 <div class="form-group">
-                    Tags
-                    @*<label asp-for="PostTags" class="control-label"></label>*@
-                    @*<select name="@ViewBag.TagID">
-                        @foreach (var tag in ViewBag.TagList)
-                        {
-                            <option value="@tag.TagID">@tag.Name</option>
-                        }*@
-                        @*<option value="1">Adventure</option>
+                    <p>Tags</p>
+                    <select name="Tag Options">
+                        <option value="0">--Select One--</option>
+                        <option value="1">Adventure</option>
                         <option value="2">Beach</option>
                         <option value="3">Explore</option>
                         <option value="4">Tour Guide</option>
                         <option value="5">Child Friendly</option>
-                        <option value="6">Newlyweds</option>*@
-                    @*</select>*@
-                    @*<span asp-validation-for="Category" class="text-danger"></span>*@
-                </div>
+                        <option value="6">Newlyweds</option>
+                    </select>
+                    <select name="Tag Options">
+                        <option value="0">--Select One--</option>
+                        <option value="1">Adventure</option>
+                        <option value="2">Beach</option>
+                        <option value="3">Explore</option>
+                        <option value="4">Tour Guide</option>
+                        <option value="5">Child Friendly</option>
+                        <option value="6">Newlyweds</option>
+                    </select>                   
+                </div><br>
 
-
-                @*<div class="form-group">
-                    <label asp-for="Tags" class="control-label"></label>
-                    <input asp-for="Tags" class="form-control" />
-                    <span asp-validation-for="Tags" class="text-danger"></span>
-                </div>*@
-                <div class="form-group">
-                    @*<label asp-for="DestinationID" class="control-label"></label>*@
+               
+                <div class="form-group">                   
                     <input type="hidden" name="CategoryID" class="form-control" value="@ViewBag.CategoryID" />
                 </div>
                 <div class="form-group">
@@ -75,12 +75,19 @@
                 </div>
             </form>
         </div>
-    </div>
+    </div><br>
 
     <div>
         <a asp-action="PostsIndex">Back To All Posts</a>
-        <p><a href="/Home/Index/">Go Back To Home Page</a></p><br />
+        <p><a href="/Home/Index/">Go Back To Home Page</a></p>
     </div>
+
+                    @*<label asp-for="PostTags" class="control-label"></label>*@
+                    @*<select name="@ViewBag.TagID">
+                        @foreach (var tag in ViewBag.TagList)
+                        {
+                            <option value="@tag.TagID">@tag.Name</option>
+                        }*@
 
 </body>
 </html>

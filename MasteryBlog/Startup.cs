@@ -21,7 +21,7 @@ namespace MasteryBlog
             services.AddMvc();
             services.AddScoped<IRepository<Category>, CategoryRepository>();
             services.AddScoped<IRepository<Post>, PostRepository>();
-            //services.AddScoped<TagRepository, TagRepository>();
+            services.AddScoped<IRepository<Tag>, TagRepository>();
             services.AddDbContext<BlogContext>();
         }
 

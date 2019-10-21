@@ -12,13 +12,13 @@ namespace MasteryBlog.Controllers
     {
         IRepository<Post> postRepo;
         IRepository<Category> categoryRepo;
-        //TagRepository tagRepo;
+        IRepository<Tag> tagRepo;
 
-        public PostController(IRepository<Post> postRepo, IRepository<Category> categoryRepo/*, TagRepository tagRepo*/)
+        public PostController(IRepository<Post> postRepo, IRepository<Category> categoryRepo, IRepository<Tag> tagRepo)
         {
             this.postRepo = postRepo;
             this.categoryRepo = categoryRepo;
-            //this.tagRepo = tagRepo;
+            this.tagRepo = tagRepo;
         }
 
         public ViewResult PostsIndex()
@@ -30,6 +30,12 @@ namespace MasteryBlog.Controllers
         public ViewResult PostByCategory(int id)
         {
             var model = postRepo.GetByCategoryID(id);
+            return View(model);
+        }
+
+        public ViewResult PostByTagID(int id)
+        {
+            var model = postRepo.GetByTagID(id);
             return View(model);
         }
 

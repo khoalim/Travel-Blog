@@ -15,5 +15,6 @@ namespace MasteryBlog.Repositories
         void Delete(T obj);
 
         IEnumerable<T> GetByCategoryID(int id);
+        IEnumerable<T> GetByTagID(int id);
     }
 }

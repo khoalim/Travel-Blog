@@ -1,0 +1,43 @@
+﻿@model IEnumerable<MasteryBlog.Models.Post>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Posts By Tag</title>
+</head>
+<body>
+    <h1>Posts By Tags</h1>
+   
+    
+    <div>
+        <section id="Tags">
+            @foreach(var posts in Model)
+            {               
+                
+            <article>
+                <p>Title: <span>@posts.Title.</span></p>
+                <p>Body: @posts.Body</p>
+                <p>Author: @posts.Author</p>
+                <p>Category: @posts.Category.Name</p>
+                <p>Publish Date: @posts.PublishDate</p>
+                @foreach (var tag in posts.PostTags)
+                {
+                    <h4> #@tag.Tag.Name </h4>
+                }
+                <hr />
+            </article>
+            }
+        </section>
+    </div>
+
+    <p><a href="/Tag/Index">Back to All Tags</a></p>
+    <p><a href="/Home/Index">Back to Home Page</a></p>
+
+    <footer><h6>&copy; Travel Blog 2019</h6></footer>
+</body>
+</html>

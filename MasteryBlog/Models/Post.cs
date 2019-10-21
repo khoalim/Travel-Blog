@@ -17,6 +17,7 @@ namespace MasteryBlog.Models
         public virtual int CategoryID { get; set; }
         public virtual Category Category { get; set; }
         public virtual IList<PostTag> PostTags { get; set; }
+        public virtual Tag Tag { get; set; }
 
         public Post()
         {

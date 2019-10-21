@@ -43,6 +43,12 @@ namespace MasteryBlog.Repositories
             return posts;
         }
 
+        public IEnumerable<Post> GetByTagID(int tagID)
+        {
+            var posts = db.PostTags.Where(t => t.TagID == tagID).Select(p => p.Post);
+            return posts;        
+        }
+
         public void Save()
         {
             db.SaveChanges();
