@@ -14,10 +14,10 @@ namespace MasteryBlog.Controllers
         IRepository<Category> categoryRepo;
         IRepository<Tag> tagRepo;
 
-        public PostController()
-        {
+        //public PostController()
+        //{
 
-        }
+        //}
 
         public PostController(IRepository<Post> postRepo, IRepository<Category> categoryRepo, IRepository<Tag> tagRepo)
         {
