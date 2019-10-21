@@ -12,6 +12,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>DeleteByCategoryID</title>
+    <link rel="stylesheet" href="~/Styles/FormStyle.css" />
 </head>
 <body>
 
@@ -55,10 +56,15 @@
         <form asp-action="Delete">
             <input type="hidden" asp-for="ID" />
             <input type="hidden" asp-for="CategoryID" />
-            <input type="submit" value="Delete" class="btn btn-default" />
+            <input type="submit" value="Delete" class="btn btn-default"/>
 
-            <p><a href="/Home/Index/">Go Back To Home Page</a></p><br />
+           <nav>
+            <a href="/Home/Index/">Home</a>
+           </nav>
         </form>
     </div>
+
+    <footer>&copy; Travel Blog 2019</footer>
+
 </body>
 </html>

@@ -11,6 +11,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Create New Post By Category</title>
+    <link rel="stylesheet" href="~/Styles/FormStyle.css" />
 </head>
 <body>
 
@@ -81,17 +82,11 @@
         </div>
     </div><br>
 
-    <div>
-        <a asp-action="PostsIndex">Back To All Posts</a>
-        <p><a href="/Home/Index/">Go Back To Home Page</a></p>
-    </div>
-
-                    @*<label asp-for="PostTags" class="control-label"></label>*@
-                    @*<select name="@ViewBag.TagID">
-                        @foreach (var tag in ViewBag.TagList)
-                        {
-                            <option value="@tag.TagID">@tag.Name</option>
-                        }*@
-
+    <nav>
+        <a href="/Home/Index/">Home</a>
+        <a asp-action="PostsIndex">Posts</a>
+    </nav>
+    <footer>&copy;Travel Blog 2019</footer>
+                    
 </body>
 </html>

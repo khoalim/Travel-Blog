@@ -67,16 +67,6 @@ namespace MasteryBlog.Repositories
         {
             throw new NotImplementedException();
         }
-        //public List<Category> categoriesList;
-        //public CategoryRepository()
-        //{
-        //    categoriesList = new List<Category>()
-        //    {
-        //        new Category(1, "/Images/FamilyVacation.jpg", "Family Getaway", "Great for family fun"),
-        //        new Category(2, "/Images/BusinessTrip.jpg", "Business Trip", "Work hard, Play hard"),
-        //        new Category(3, "/Images/Retirement.jpg", "Retirement", "Top of the bucket-list"),
-        //        new Category(4, "/Images/Honeymoon.jpg", "Honeymoon", "Paradise")
-        //    };
-        //}
+        
     }
 }
