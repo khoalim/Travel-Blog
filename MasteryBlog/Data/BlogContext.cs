@@ -175,6 +175,18 @@ namespace MasteryBlog.Data
                 {
                     TagID = 6,
                     Name = "Newlyweds"
+                },
+
+                new Tag()
+                {
+                    TagID = 7,
+                    Name = "Relaxation"
+                },
+
+                new Tag()
+                {
+                    TagID = 8,
+                    Name = "Exchange Rate"
                 }
                 );
 
@@ -193,6 +205,18 @@ namespace MasteryBlog.Data
 
                 new PostTag()
                 {
+                    PostID = 2,
+                    TagID = 2
+                },
+
+                new PostTag()
+                {
+                    PostID = 2,
+                    TagID = 5
+                },
+
+                new PostTag()
+                {
                     PostID = 3,
                     TagID = 3
                 },
@@ -201,6 +225,18 @@ namespace MasteryBlog.Data
                 {
                     PostID = 3,
                     TagID = 4
+                },
+
+                new PostTag()
+                {
+                    PostID = 4,
+                    TagID = 7
+                },
+
+                new PostTag()
+                {
+                    PostID = 4,
+                    TagID = 8
                 },
 
                 new PostTag()
@@ -217,6 +253,18 @@ namespace MasteryBlog.Data
 
                 new PostTag()
                 {
+                    PostID = 6,
+                    TagID = 3
+                },
+
+                new PostTag()
+                {
+                    PostID = 6,
+                    TagID = 7
+                },
+
+                new PostTag()
+                {
                     PostID = 7,
                     TagID = 1
                 },
@@ -225,6 +273,18 @@ namespace MasteryBlog.Data
                 {
                     PostID = 7,
                     TagID = 6
+                },
+
+                new PostTag()
+                {
+                    PostID = 8,
+                    TagID = 6
+                },
+
+                new PostTag()
+                {
+                    PostID = 8,
+                    TagID = 7
                 }
                 );
 

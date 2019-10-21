@@ -1,27 +1,23 @@
-﻿
-
-* {
+﻿* {
     font-family: sans-serif;
     line-height: 1.618em;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-   
 }
 
 body {
     padding-top: 3rem;
     margin-left: 3rem;
     margin-right: 3rem;
-    
 }
 
 html {
     font-size: 16px;
     margin-top: 3em;
     text-align: center;
-   
 }
+
 nav {
     position: fixed;
     top: 0;
@@ -36,18 +32,12 @@ nav {
     background-color: #3daab8;
 }
 
-nav a{
-    padding: 0.5em 2em;
-    text-decoration: none;    
-    color: black;        
+nav a {
+     padding: 0.5em 2em;
+     text-decoration: none;
+     color: black;
     }
 
-img {
-    border-radius: 20%;
-    height:25rem;
-    width: 35rem;
-    
-}
 
 footer {
     margin-top: 2em;
@@ -59,4 +49,3 @@ footer {
     text-align: center;
     font-size: 1.2rem;
 }
-

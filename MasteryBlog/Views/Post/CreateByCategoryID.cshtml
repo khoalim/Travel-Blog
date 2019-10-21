@@ -11,6 +11,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Create New Post By Category</title>
+    <link rel="stylesheet" href="~/Styles/FormStyle.css" />
 </head>
 <body>
 
@@ -54,6 +55,8 @@
                         <option value="4">Tour Guide</option>
                         <option value="5">Child Friendly</option>
                         <option value="6">Newlyweds</option>
+                        <option value="7">Relaxation</option>
+                        <option value="8">Exchange Rate</option>
                     </select>
                     <select name="Tag Options">
                         <option value="0">--Select One--</option>
@@ -63,6 +66,8 @@
                         <option value="4">Tour Guide</option>
                         <option value="5">Child Friendly</option>
                         <option value="6">Newlyweds</option>
+                        <option value="7">Relaxation</option>
+                        <option value="8">Exchange Rate</option>
                     </select>                   
                 </div><br>
 
@@ -77,17 +82,11 @@
         </div>
     </div><br>
 
-    <div>
-        <a asp-action="PostsIndex">Back To All Posts</a>
-        <p><a href="/Home/Index/">Go Back To Home Page</a></p>
-    </div>
-
-                    @*<label asp-for="PostTags" class="control-label"></label>*@
-                    @*<select name="@ViewBag.TagID">
-                        @foreach (var tag in ViewBag.TagList)
-                        {
-                            <option value="@tag.TagID">@tag.Name</option>
-                        }*@
-
+    <nav>
+        <a href="/Home/Index/">Home</a>
+        <a asp-action="PostsIndex">Posts</a>
+    </nav>
+    <footer>&copy;Travel Blog 2019</footer>
+                    
 </body>
 </html>

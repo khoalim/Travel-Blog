@@ -4,14 +4,16 @@ using MasteryBlog.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MasteryBlog.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    partial class BlogContextModelSnapshot : ModelSnapshot
+    [Migration("20191021062420_AddedNewTagsAndPostTags")]
+    partial class AddedNewTagsAndPostTags
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -70,14 +72,14 @@ namespace MasteryBlog.Migrations
                     b.ToTable("Posts");
 
                     b.HasData(
-                        new { ID = 1, Author = "Jane Doe", Body = "Clean excursion wanderlust design wanderlust WordPress blogger, organized theme website organized excursion cute. Darn colorful colorful whimsical, WordPress whimsical colorful modern design webdesign clean adventure excursion.", CategoryID = 1, PublishDate = new DateTime(2019, 10, 21, 5, 0, 18, 850, DateTimeKind.Local), Title = "Travelling with picky eaters" },
-                        new { ID = 2, Author = "John Smith", Body = "Theme colorful excursion webdesign, colorful travelblogger traveling darn Travel Travel design expedition. Darn whimsical traveling colorful wanderlust cute blogger.", CategoryID = 1, PublishDate = new DateTime(2019, 10, 21, 5, 0, 18, 852, DateTimeKind.Local), Title = "10 Tips for Flying Internationally" },
-                        new { ID = 3, Author = "Mary Poppins", Body = "Modern darn WordPress cute traveler design, webdesign WordPress Travel cute colorful whimsical modern whimsical. Expedition design adventure WordPress modern darn excursion, webdesign design darn organized.", CategoryID = 2, PublishDate = new DateTime(2019, 10, 21, 5, 0, 18, 852, DateTimeKind.Local), Title = "6 Ideas for Working Abroad" },
-                        new { ID = 4, Author = "Billie Sullivan", Body = "Fun excursion excursion adventure traveling traveling Travel Travel, Travel website colorful pretty pretty simple. Travelblogger webdesign WordPress, adventure modern design organized website colorful theme travelblogger website simple.", CategoryID = 2, PublishDate = new DateTime(2019, 10, 21, 5, 0, 18, 852, DateTimeKind.Local), Title = "How to Survive a Working Holiday" },
-                        new { ID = 5, Author = "Jermaine Hough", Body = "Cute website travelblogger theme WordPress whimsical organized design. Travelblogger whimsical adventure darn darn, design traveler colorful cute cute organized whimsical darn.", CategoryID = 3, PublishDate = new DateTime(2019, 10, 21, 5, 0, 18, 852, DateTimeKind.Local), Title = "The Only Luxury You Have - Use It Well Before It's Too Late" },
-                        new { ID = 6, Author = "Gregg Espinoza", Body = "Darn theme whimsical cute blogger expedition blogger colorful design. Excursion pretty WordPress design expedition traveling, wanderlust excursion WordPress theme cute. Design colorful theme wanderlust travelblogger, darn webdesign simple organized webdesign.", CategoryID = 3, PublishDate = new DateTime(2019, 10, 21, 5, 0, 18, 852, DateTimeKind.Local), Title = "How to travel full time on a pension" },
-                        new { ID = 7, Author = "Maxine Dickens", Body = "Adventure excursion theme Travel clean excursion expedition. Theme WordPress pretty website wanderlust website expedition WordPress. Simple design adventure expedition colorful simple wanderlust WordPress, excursion organized website wanderlust colorful.", CategoryID = 4, PublishDate = new DateTime(2019, 10, 21, 5, 0, 18, 852, DateTimeKind.Local), Title = "10 Best Italy Honeymoon Destinations" },
-                        new { ID = 8, Author = "Montel Dolan", Body = "Organized design WordPress, travelblogger webdesign fun Travel cute clean clean website. Traveling travelblogger organized Travel blogger adventure traveler wanderlust webdesign, blogger Travel darn organized.", CategoryID = 4, PublishDate = new DateTime(2019, 10, 21, 5, 0, 18, 852, DateTimeKind.Local), Title = "How To Plan A Luxury Getaway" }
+                        new { ID = 1, Author = "Jane Doe", Body = "Clean excursion wanderlust design wanderlust WordPress blogger, organized theme website organized excursion cute. Darn colorful colorful whimsical, WordPress whimsical colorful modern design webdesign clean adventure excursion.", CategoryID = 1, PublishDate = new DateTime(2019, 10, 21, 2, 24, 20, 137, DateTimeKind.Local), Title = "Travelling with picky eaters" },
+                        new { ID = 2, Author = "John Smith", Body = "Theme colorful excursion webdesign, colorful travelblogger traveling darn Travel Travel design expedition. Darn whimsical traveling colorful wanderlust cute blogger.", CategoryID = 1, PublishDate = new DateTime(2019, 10, 21, 2, 24, 20, 139, DateTimeKind.Local), Title = "10 Tips for Flying Internationally" },
+                        new { ID = 3, Author = "Mary Poppins", Body = "Modern darn WordPress cute traveler design, webdesign WordPress Travel cute colorful whimsical modern whimsical. Expedition design adventure WordPress modern darn excursion, webdesign design darn organized.", CategoryID = 2, PublishDate = new DateTime(2019, 10, 21, 2, 24, 20, 139, DateTimeKind.Local), Title = "6 Ideas for Working Abroad" },
+                        new { ID = 4, Author = "Billie Sullivan", Body = "Fun excursion excursion adventure traveling traveling Travel Travel, Travel website colorful pretty pretty simple. Travelblogger webdesign WordPress, adventure modern design organized website colorful theme travelblogger website simple.", CategoryID = 2, PublishDate = new DateTime(2019, 10, 21, 2, 24, 20, 139, DateTimeKind.Local), Title = "How to Survive a Working Holiday" },
+                        new { ID = 5, Author = "Jermaine Hough", Body = "Cute website travelblogger theme WordPress whimsical organized design. Travelblogger whimsical adventure darn darn, design traveler colorful cute cute organized whimsical darn.", CategoryID = 3, PublishDate = new DateTime(2019, 10, 21, 2, 24, 20, 139, DateTimeKind.Local), Title = "The Only Luxury You Have - Use It Well Before It's Too Late" },
+                        new { ID = 6, Author = "Gregg Espinoza", Body = "Darn theme whimsical cute blogger expedition blogger colorful design. Excursion pretty WordPress design expedition traveling, wanderlust excursion WordPress theme cute. Design colorful theme wanderlust travelblogger, darn webdesign simple organized webdesign.", CategoryID = 3, PublishDate = new DateTime(2019, 10, 21, 2, 24, 20, 139, DateTimeKind.Local), Title = "How to travel full time on a pension" },
+                        new { ID = 7, Author = "Maxine Dickens", Body = "Adventure excursion theme Travel clean excursion expedition. Theme WordPress pretty website wanderlust website expedition WordPress. Simple design adventure expedition colorful simple wanderlust WordPress, excursion organized website wanderlust colorful.", CategoryID = 4, PublishDate = new DateTime(2019, 10, 21, 2, 24, 20, 139, DateTimeKind.Local), Title = "10 Best Italy Honeymoon Destinations" },
+                        new { ID = 8, Author = "Montel Dolan", Body = "Organized design WordPress, travelblogger webdesign fun Travel cute clean clean website. Traveling travelblogger organized Travel blogger adventure traveler wanderlust webdesign, blogger Travel darn organized.", CategoryID = 4, PublishDate = new DateTime(2019, 10, 21, 2, 24, 20, 139, DateTimeKind.Local), Title = "How To Plan A Luxury Getaway" }
                     );
                 });
 
@@ -96,7 +98,6 @@ namespace MasteryBlog.Migrations
                     b.HasData(
                         new { PostID = 1, TagID = 1 },
                         new { PostID = 1, TagID = 5 },
-                        new { PostID = 2, TagID = 2 },
                         new { PostID = 2, TagID = 5 },
                         new { PostID = 3, TagID = 3 },
                         new { PostID = 3, TagID = 4 },
