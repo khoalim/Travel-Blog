@@ -10,6 +10,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Styles/FormStyle.css" />
     <title>Create New Post From Index</title>
 </head>
 <body>
@@ -50,31 +51,36 @@
                      <span asp-validation-for="Category" class="text-danger"></span>
                     
 
-                <div class="form-group"><br>
-                 <p>Tags</p> 
-                 <select name="Tag Options">
-                         <option value="0">--Select One--</option>
-                         <option value="1">Adventure</option>
-                         <option value="2">Beach</option>
-                         <option value="3">Explore</option>
-                         <option value="4">Tour Guide</option>
-                         <option value="5">Child Friendly</option>
-                         <option value="6">Newlyweds</option>
-                         <option value="7">Relaxation</option>
-                         <option value="8">Exchange Rate</option>
-                 </select>
-                 <select name="Tag Options">
-                          <option value="0">--Select One--</option>
-                          <option value="1">Adventure</option>
-                          <option value="2">Beach</option>
-                          <option value="3">Explore</option>
-                          <option value="4">Tour Guide</option>
-                          <option value="5">Child Friendly</option>
-                          <option value="6">Newlyweds</option>
-                          <option value="7">Relaxation</option>
-                          <option value="8">Exchange Rate</option>
-                 </select>                     
-                 </div><br>                    
+                     <div class="form-group">
+                         <br>
+                         <p>Tags</p>
+                         <select name="Tag Options">
+                             <option value="0">--Select One--</option>
+                             <option value="1">Adventure</option>
+                             <option value="2">Beach</option>
+                             <option value="3">Explore</option>
+                             <option value="4">Tour Guide</option>
+                             <option value="5">Child Friendly</option>
+                             <option value="6">Newlyweds</option>
+                             <option value="7">Relaxation</option>
+                             <option value="8">Exchange Rate</option>
+                         </select>
+                         <span asp-validation-for="Tag" class="text-danger"></span>
+
+                         <select name="Tag Options">
+                             <option value="0">--Select One--</option>
+                             <option value="1">Adventure</option>
+                             <option value="2">Beach</option>
+                             <option value="3">Explore</option>
+                             <option value="4">Tour Guide</option>
+                             <option value="5">Child Friendly</option>
+                             <option value="6">Newlyweds</option>
+                             <option value="7">Relaxation</option>
+                             <option value="8">Exchange Rate</option>
+                         </select>
+                         <span asp-validation-for="Tag" class="text-danger"></span>
+
+                     </div><br>                    
                 </div>
                
                 <div class="form-group">                  
@@ -93,11 +99,13 @@
         </div>
     </div><br>
 
-    <div>
-        <a asp-action="/PostsIndex">Back To All Posts</a>
-        <p><a href="/Home/Index/">Go Back To Home Page</a></p>
-        <footer><h6>&copy;Travel Blog 2019</h6></footer>
-    </div>
+              <nav>
+                  <a href="/Home/Index/">Home</a>
+                  <a asp-action="PostsIndex">All Posts</a>
+              </nav>
+
+
+              <footer><h6>&copy;Travel Blog 2019</h6></footer>
 
 </body>
 </html>
