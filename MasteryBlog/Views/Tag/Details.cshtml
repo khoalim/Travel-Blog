@@ -1,0 +1,26 @@
+﻿@model MasteryBlog.Models.Tag
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@Model.Name Tag Page</title>
+</head>
+<body>
+    <h1>Tag: #@Model.Name  </h1>
+    <div>
+        
+        
+        <p><a href="/Post/PostByTagID/@Model.TagID">View Posts with Related Tag</a></p>
+    </div>
+    <hr />
+
+    <p><a href="/Home/Index">Home Page</a></p>
+    <p><a href="/Tag/Index">Back To All Tags</a></p>
+    <footer><h6>&copy; Travel Blog 2019</h6></footer>
+</body>
+</html>

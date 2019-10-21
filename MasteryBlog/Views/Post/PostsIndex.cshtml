@@ -15,14 +15,13 @@
     <h1>All Blog Posts</h1>
     <div>
         <section id="Destinations">
-
-            @*<img src="@Model.First().Category.Image" alt="@Model.First().Category.Name" style="height:10rem; width:20rem;" />*@
+            
 
             @foreach (var category in Model)
                 {
                     <article>
                         <p><h3><a href="/Category/Details/@category.Id"> Blog Category: @category.Name</a></h3></p>
-                        <img src="@category.Image" alt="@category.Name" style="height: 120px; width: 200px;" />
+                        <img src="@category.Image" alt="@category.Name" style="height: 7.5rem; width: 12.5rem;" />
                         
                         @foreach (var posts in category.Posts)
                            {
@@ -31,11 +30,13 @@
                             <p>Body: @posts.Body</p>
                             <p>Author: @posts.Author</p>
                             <p>Category: @posts.Category.Name</p>
-                            <p>Publish Date: @posts.PublishDate</p>                            
-                            @foreach (var postTag in posts.PostTags)
-                               {
-                                    <p>Tags: @postTag.Tag.Name</p>
-                               }
+                            <p>Publish Date: @posts.PublishDate</p>
+                            <p>Tags: </p>
+
+                            @foreach (var tag in posts.PostTags)
+                            {
+                                <p><a href="/Tag/Index/@tag.TagID">@tag.Tag.Name</a></p>                              
+                            }
 
 
                             <section id="EditForm">

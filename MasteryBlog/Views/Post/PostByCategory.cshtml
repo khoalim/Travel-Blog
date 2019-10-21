@@ -26,9 +26,10 @@
                     <p>Author: @posts.Author</p>   
                     <p>Category: @posts.Category.Name</p>
                     <p>Publish Date: @posts.PublishDate</p>
+                    <p>Tags:</p>
                     @foreach (var tag in posts.PostTags)
-                    {
-                        <p>Tags: @tag.Tag.Name</p>
+                    {                        
+                    <p><a href="/Tag/Index/@tag.TagID">@tag.Tag.Name</a></p>
                     }
 
                     <section id="EditForm">

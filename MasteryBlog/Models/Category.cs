@@ -18,13 +18,13 @@ namespace MasteryBlog.Models
         {
         }
 
-        public Category(int id, string image, string name, string description)
-        {
-            this.Id = id;
-            this.Image = image;
-            this.Name = name;
-            this.Description = description;
-        }
+        //public Category(int id, string image, string name, string description)
+        //{
+        //    this.Id = id;
+        //    this.Image = image;
+        //    this.Name = name;
+        //    this.Description = description;
+        //}
     }
 
 }
