@@ -10,7 +10,7 @@ Welcome to our Blog Site!
 <br>3. Use the navigation bar at the top of the page to view **All Posts**, **Categories**, or **Tags**.
 <br>4. Click on the **Title Name** above the image of a destination category to view its description and posts.
 <br>5. Click on the **Tags** under a post to view a list of other posts which have the same tag.
-<br>6. Click on the **Add**, **Edit** or **Delete** buttons to add a new post to the blog, edit it or delete it respsectively.
+<br>6. Click on the **Add**, **Edit** or **Delete** buttons to ADD a new post to the blog, EDIT it or DELETE it respectively.
 <br>7. To return to the Home Page, click on **Home** on the navigation bar to view the list of all posts available on the website.
 
 
